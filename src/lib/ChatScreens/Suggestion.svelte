@@ -13,6 +13,7 @@
     import { onDestroy } from 'svelte';
     import { ParseMarkdown } from "src/ts/parser/parser.svelte";
     import {defaultAutoSuggestPrompt} from "../../ts/storage/defaultPrompts.js";
+    import { tooltip } from "src/ts/gui/tooltip";
 
     interface Props {
         send: () => any;
@@ -199,10 +200,10 @@
                     {@html md}
                 {/await}
                 </button>
-                <button class="shrink-0 bg-textcolor2 hover:bg-darkbutton text-textcolor py-2 px-4 rounded-sm" onclick={() => {
+                <button class="shrink-0 bg-textcolor2 hover:bg-darkbutton text-textcolor py-2 px-4 rounded-sm" use:tooltip={language.insertSuggestionToInput} aria-label={language.insertSuggestionToInput} onclick={() => {
                     messageInput(suggest)
                 }}>
-                    <CornerDownLeft/>
+                    <CornerDownLeft aria-hidden="true"/>
                 </button>
             </div>
         {/each}
