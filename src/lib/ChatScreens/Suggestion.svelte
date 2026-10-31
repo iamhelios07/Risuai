@@ -6,7 +6,7 @@
     import { selectedCharID } from "../../ts/stores.svelte";
     import { isTauri } from 'src/ts/platform';
     import { translate } from "src/ts/translator/translator";
-    import { CopyIcon, LanguagesIcon, RefreshCcwIcon } from "@lucide/svelte";
+    import { CornerDownLeft, LanguagesIcon, RefreshCcwIcon } from "@lucide/svelte";
     import { alertConfirm } from "src/ts/alert";
     import { language } from "src/lang";
     import { getUserName, replacePlaceholders } from "../../ts/util";
@@ -202,7 +202,7 @@
                 <button class="shrink-0 bg-textcolor2 hover:bg-darkbutton text-textcolor py-2 px-4 rounded-sm" onclick={() => {
                     messageInput(suggest)
                 }}>
-                    <CopyIcon/>
+                    <CornerDownLeft/>
                 </button>
             </div>
         {/each}
